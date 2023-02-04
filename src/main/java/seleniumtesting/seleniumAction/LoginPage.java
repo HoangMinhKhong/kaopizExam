@@ -1,4 +1,4 @@
-package mk.ukim.finki.seleniumtesting;
+package seleniumtesting.seleniumAction;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,26 +12,25 @@ public class LoginPage extends BasePage {
     }
 
     public void open() {
-        driver.get("https://www.facebook.com/");
+        driver.get("https://www.phptravels.net/login");
     }
 
     public boolean isLoaded() throws InterruptedException {
         Thread.sleep(5000);
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email"))).isDisplayed();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("email"))).isDisplayed();
     }
 
     public void login(String user, String password) throws InterruptedException {
-        driver.findElement(By.id("email")).clear();
-        driver.findElement(By.id("email")).sendKeys(user);
+        driver.findElement(By.name("email")).clear();
+        driver.findElement(By.name("email")).sendKeys(user);
         Thread.sleep(5000);
-        driver.findElement(By.id("pass")).sendKeys(password);
+        driver.findElement(By.name("password")).sendKeys(password);
         Thread.sleep(5000);
         driver.findElement(By.cssSelector("[name=\"login\"]")).click();
         Thread.sleep(5000);
     }
 
-    public String getErrorMessage() {
-        WebElement errorPage = driver.findElement(By.className("_9ay7"));
-        return errorPage.getText();
+    public void rememberMe(){
+        driver.findElement(By.xpath("//label[text()='Remember Me']")).click();
     }
 }

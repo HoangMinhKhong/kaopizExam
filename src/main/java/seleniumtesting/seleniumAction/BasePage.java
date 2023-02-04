@@ -1,4 +1,4 @@
-package mk.ukim.finki.seleniumtesting;
+package seleniumtesting.seleniumAction;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
