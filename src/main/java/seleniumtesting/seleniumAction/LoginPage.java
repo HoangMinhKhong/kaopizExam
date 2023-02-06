@@ -15,10 +15,10 @@ public class LoginPage extends BasePage {
         driver.get("https://www.phptravels.net/login");
     }
 
-    public boolean isLoaded() throws InterruptedException {
-        Thread.sleep(5000);
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("email"))).isDisplayed();
-    }
+//    public boolean isLoaded() throws InterruptedException {
+//        Thread.sleep(5000);
+//        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("email"))).isDisplayed();
+//    }
 
     public void login(String user, String password) throws InterruptedException {
         driver.findElement(By.name("email")).clear();

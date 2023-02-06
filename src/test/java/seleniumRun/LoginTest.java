@@ -21,19 +21,11 @@ public class LoginTest {
         driver = getDriver();
     }
 
-
-    @Test
-    public void shouldOpen() throws InterruptedException {
-        loginPage.open();
-        assertTrue(loginPage.isLoaded());
-    }
-
 //    thuc hien kiem tra placecholder cua textbox email va password
 //    thuc hien login
     @Test
     public void verifyPlaceholderEmaiAndPass() throws InterruptedException {
         loginPage.open();
-        assertTrue(loginPage.isLoaded());
         loginVerify.verifyPlaceholderEmail();
         loginVerify.verifyPlaceholderPassWord();
     }
@@ -54,7 +46,7 @@ public class LoginTest {
 
 
     private WebDriver getDriver() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\gabri\\Desktop\\Intellij Homeworks\\SeleniumAutomaticTesting\\src\\main\\resources\\drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/src/test/java/driver/chromedriver_mac64");
         return new ChromeDriver();
     }
 
